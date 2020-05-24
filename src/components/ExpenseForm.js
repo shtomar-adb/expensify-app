@@ -1,7 +1,6 @@
 import React from 'react';
 import moment from 'moment';
 import {  SingleDatePicker } from 'react-dates';
-import { createStore } from 'redux';
 
 export default class ExpenseForm extends React.Component {
 
