@@ -2,7 +2,6 @@ const expenseReducersDefaultState = [];
 export default (state = expenseReducersDefaultState, action) => {
     switch(action.type){
         case 'ADD_EXPENSE':
-            console.log("Indide expense reducer");
             return [...state, action.expense];
         case 'REMOVE_EXPENSE':
             return state.filter(
@@ -17,6 +16,8 @@ export default (state = expenseReducersDefaultState, action) => {
                     return {...expense, ...action.update};
                 }
             });    
+        case 'SET_EXPENSES':
+            return action.expenses;
         default: return state;
     }
 };

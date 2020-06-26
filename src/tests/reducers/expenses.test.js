@@ -29,6 +29,17 @@ test('Test Edit Expense FAILURE', () => {
        }]);
 });
 
-test('Test Remve Expense', () => {
+test('Test Remove Expense', () => {
     expect(expensesreduces(dataSample, {type:'REMOVE_EXPENSE', uuid:'3'})).toEqual([dataSample[0],dataSample[1]]);
 });
+
+test('Should set expenses', () => {
+    const action = {
+        type: 'SET_EXPENSES',
+        expenses: [dataSample[0]]
+    };
+
+    const state = expensesreduces(dataSample, action);
+    expect(state).toEqual([dataSample[0]]);
+});
+
