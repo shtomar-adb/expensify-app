@@ -7,7 +7,6 @@ const Add = (props) => (
     <div>
         <h1>Add Expense</h1>
         <ExpenseForm onSubmit={(expense) => {
-            console.log(expense);
             props.dispatch(startAddExpense(expense));
             props.history.push('/');
         }}/>
